@@ -1,0 +1,14 @@
+#directory
+auto-save-list/
+eln-cache/
+elpa/
+eshell/
+games/
+.*/
+
+#file
+amx-items
+recentf
+tramp
+.lsp*
+*~
