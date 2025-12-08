@@ -1,11 +1,11 @@
-;;; package management
-(unless package--initialized
-  (require 'package)
-  (add-to-list 'package-archives '("melpa" . "https://melpa.org/packages/") t)
-  (package-initialize))
-(setq use-package-always-ensure t)
-(setq use-package-always-defer nil)
-(setq use-package-expand-minimally t)
+(require 'package)
+(setq package-archives '(("gnu"     . "https://elpa.gnu.org/packages/")
+                         ("melpa"   . "https://melpa.org/packages/")
+                         ("nongnu"  . "https://elpa.nongnu.org/nongnu/"))) 
+(package-initialize)
+
+(eval-when-compile
+  (require 'use-package))
 
 ;;; native config
 (when (display-graphic-p) (toggle-scroll-bar -1))
