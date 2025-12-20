@@ -15,7 +15,7 @@
   :config
   (setq company-minimum-prefix-length 3)
   (setq company-tooltip-align-annotations t)
-  (setq company-idle-delay 0.3)
+  (setq company-idle-delay 0.5)
   (setq company-show-numbers t)
   (setq company-selection-wrap-around t)
   (setq company-transformers '(company-sort-by-occurrence)))

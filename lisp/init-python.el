@@ -3,12 +3,6 @@
   :mode ("\\.py\\'" . python-mode)
   :hook ((python-mode . lsp-deferred)))
 
-(use-package jupyter
-  :ensure t
-  :after lsp-mode
-  :config
-  (setq jupyter-use-lsp t))
-
 (use-package pyvenv
   :ensure t
   :hook (python-mode . pyvenv-mode)

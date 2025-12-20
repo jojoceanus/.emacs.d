@@ -37,7 +37,6 @@
 ;;; overview the project
 (use-package treemacs
   :ensure t
-  :defer t
   :config
   (treemacs-tag-follow-mode)
   :bind
