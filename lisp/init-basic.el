@@ -34,29 +34,6 @@
   :config
   (xclip-mode 1))
 
-;;; overview the project
-(use-package treemacs
-  :ensure t
-  :config
-  (treemacs-tag-follow-mode)
-  :bind
-  (:map global-map
-	("M-0" . treemacs-select-window)
-	("C-x t 1" . treemacs-delete-other-window)
-	("C-x t t" . treemacs)
-	("C-x t B" . treemacs-bookmark)
-	("C-x t M-t" . treemacs-find-tag))
-  (:map treemacs-mode-map
-	("/" . treemacs-advanced-helpful-hydra)))
-
-;;; project manager
-(use-package projectile
-  :ensure t
-  :bind (("C-c p" . projectile-command-map))
-  :config
-  (setq projectile-mode-line "Projectile")
-  (setq projectile-track-known-projects-automatically nil))
-
 ;;; ivy 
 (require 'init-ivy)
 

@@ -1,14 +1,6 @@
 ;;; toggle
 (add-hook 'prog-mode-hook #'hs-minor-mode)
 
-(use-package treemacs-projectile
-  :ensure t
-  :after (treemacs projectile))
-
-(use-package lsp-treemacs
-  :ensure t
-  :after (treemacs lsp))
-
 (use-package company
   :ensure t
   :init (global-company-mode)
@@ -41,16 +33,19 @@
 
 (use-package flycheck
   :ensure t
-  :after lsp-Mode)
+  :after lsp-mode)
 
 (use-package lsp-ui
   :ensure t
+  :hook (lsp-mode . lsp-ui-mode)
   :config
   (define-key lsp-ui-mode-map [remap xref-find-definitions] #'lsp-ui-peek-find-definitions)
   (define-key lsp-ui-mode-map [remap xref-find-references] #'lsp-ui-peek-find-references)
   (setq lsp-ui-doc-position 'top))
 
 ;;; language config
+
+(require 'init-cc)
 
 (require 'init-python)
 

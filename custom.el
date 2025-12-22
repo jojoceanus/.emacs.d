@@ -9,7 +9,10 @@
  '(indent-tabs-mode nil)
  '(inhibit-startup-screen t)
  '(make-backup-files nil)
- '(package-selected-packages nil))
+ '(package-selected-packages
+   '(amx clang-format company-box counsel default-text-scale
+         dracula-theme flycheck lsp-treemacs lsp-ui mwim pyvenv
+         rainbow-delimiters treemacs-projectile undo-tree xclip)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

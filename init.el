@@ -9,6 +9,9 @@
 ;;; vi mode
 ;(require 'init-vi)
 
+(require 'init-project)
+
+(require 'init-treemacs)
 ;;; ehance code experience
 (require 'init-program)
 
