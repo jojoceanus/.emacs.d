@@ -66,11 +66,11 @@
   (undo-tree-auto-save-history nil))
 
 ;;; move pointer in emacs mode
-;; (use-package avy
-;;   :ensure t
-;;   :bind
-;;   (("M-j C-SPC" . avy-goto-char-timer)))
-;;; to-do fix the M-j conflict
+(use-package avy
+  :ensure t
+  :bind
+  (("C-'" . avy-goto-char-timer)
+   ("M-g f" . avy-goto-line)))
 
 ;;; use which key to dispay commands
 (use-package which-key
