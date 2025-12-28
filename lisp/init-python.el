@@ -3,6 +3,13 @@
   :mode ("\\.py\\'" . python-mode)
   :hook ((python-mode . lsp-deferred)))
 
+(use-package lsp-pyright
+  :ensure t
+  :after lsp-mode
+  :hook (python-mode . (lambda ()
+                         (require 'lsp-pyright)
+                         (lsp-deferred))))
+
 (use-package pyvenv
   :ensure t
   :hook (python-mode . pyvenv-mode)
