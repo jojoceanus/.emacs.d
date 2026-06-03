@@ -2,14 +2,17 @@
 
 (use-package eglot
   :ensure nil
-  :hook (prog-mode . eglot-ensure)
   :custom
   (eglot-autoshutdown t)
   (eglot-events-buffer-size 0)
   (eglot-ignored-server-capabilities '(:documentOnTypeFormattingProvider))
   :config
-  (dolist (entry my-lsp-server-alist)
-    (add-to-list 'eglot-server-programs entry))
+  ;; only auto-attach eglot for modes that have a registered server
+  (defun my-eglot-ensure ()
+    "Start eglot only if a server is registered for the current major mode."
+    (when (assoc major-mode my-lsp-server-alist)
+      (eglot-ensure)))
+  (add-hook 'prog-mode-hook #'my-eglot-ensure)
 
   (setq my-lsp-reconnect-function
         (lambda ()

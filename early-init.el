@@ -7,6 +7,13 @@
 		(lambda ()
 		  (setq gc-cons-threshold 16777216)))
 
+      ;; defer file-name-handler-alist lookup during startup
+      (defvar my--file-name-handler-alist file-name-handler-alist)
+      (setq file-name-handler-alist nil)
+      (add-hook 'emacs-startup-hook
+		(lambda ()
+		  (setq file-name-handler-alist my--file-name-handler-alist)))
+
 
 
       (setq default-frame-alist '(

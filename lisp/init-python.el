@@ -29,7 +29,7 @@
 
 (my-lsp-register-server 'python-ts-mode '("pyright-langserver" "--stdio"))
 
-(with-eval-after-load 'init-program
-  (add-hook 'my-python-venv-changed-hook #'my-lsp-on-env-change))
+;; reconnect LSP when virtualenv changes
+(add-hook 'my-python-venv-changed-hook #'my-lsp-on-env-change)
 
 (provide 'init-python)

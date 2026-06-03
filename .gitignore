@@ -1,5 +1,6 @@
 #directory
 auto-save-list/
+backup/
 eln-cache/
 elpa/
 eshell/
