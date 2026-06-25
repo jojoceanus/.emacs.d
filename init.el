@@ -20,6 +20,7 @@
 
 (require 'init-corfu)
 
+(require 'init-envrc)
 (require 'init-program)
 (require 'init-cc)
 (require 'init-python)
