@@ -52,6 +52,48 @@
   :ensure t
   :init (which-key-mode))
 
+;;; git gutter indicators (like VS Code)
+(use-package diff-hl
+  :ensure t
+  :hook ((prog-mode . diff-hl-mode)
+         (magit-pre-refresh . diff-hl-magit-pre-refresh)
+         (magit-post-refresh . diff-hl-magit-post-refresh)))
+
+;;; git integration
+(use-package magit
+  :ensure t
+  :bind ("C-x g" . magit-status))
+
+;;; multiple cursors
+(use-package multiple-cursors
+  :ensure t
+  :bind (("C-=" . mc/mark-next-like-this)
+         ("C--" . mc/mark-previous-like-this)
+         ("C-c C-=" . mc/edit-lines)
+         ("C-c C-a" . mc/mark-all-like-this)))
+
+;;; code snippets
+(use-package tempel
+  :ensure t
+  :bind (("M-+" . tempel-complete)
+         ("M-=" . tempel-insert)))
+
+;;; highlight TODO/FIXME/HACK
+(use-package hl-todo
+  :ensure t
+  :hook (prog-mode . hl-todo-mode))
+
+;;; clean up mode-line
+(use-package diminish
+  :ensure t
+  :config
+  (diminish 'which-key-mode)
+  (diminish 'undo-tree-mode)
+  (diminish 'auto-revert-mode)
+  (diminish 'electric-pair-mode)
+  (diminish 'repeat-mode)
+  (diminish 'global-display-line-numbers-mode))
+
 ;;; terminal emulators
 (use-package ghostel
   :ensure t

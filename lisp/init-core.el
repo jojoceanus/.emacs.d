@@ -36,6 +36,21 @@
 ;; allow repeating commands like C-x o without re-typing the prefix
 (repeat-mode 1)
 
+;; persist history across restarts
+(savehist-mode 1)
+
+;; save window layouts across restarts
+(winner-mode 1)
+
+;; tmux-like tabs/workspaces (hidden by default)
+(setq tab-bar-show nil)
+(setq tab-bar-new-tab-to-distinguish t)
+(keymap-global-set "C-x t n" #'tab-bar-new-tab)
+(keymap-global-set "C-x t r" #'tab-bar-rename-tab)
+(keymap-global-set "C-x t 0" #'tab-bar-close-tab)
+(keymap-global-set "C-x t o" #'tab-bar-switch-to-tab)
+(keymap-global-set "C-x t t" #'tab-bar-switch-to-tab)
+
 ;;; disable custom-file
 (setq custom-file (expand-file-name "~/.emacs.d/custom.el.disabled"))
 (setq custom-safe-themes t)
