@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t -*-
 ;;; lang/init-cc.el
 
 (use-package cc-mode

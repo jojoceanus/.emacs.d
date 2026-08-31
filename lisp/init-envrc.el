@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t -*-
 ;;; init-envrc.el
 
 (use-package envrc

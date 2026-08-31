@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t -*-
 (defun my-initialize-package ()
   (unless (bound-and-true-p package--initialized)
     (require 'package)

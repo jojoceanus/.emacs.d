@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t -*-
 ;;; init-vertico.el
 
 (use-package vertico

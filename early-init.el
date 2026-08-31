@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t -*-
 (condition-case err
     (progn
       (setq inhibit-redisplay t)

@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t -*-
 (use-package verilog-mode
   :ensure t
   :mode ("\\.v\\'" "\\.sv\\'")

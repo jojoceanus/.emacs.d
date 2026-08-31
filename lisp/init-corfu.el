@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t -*-
 ;;; init-corfu.el
 
 (use-package corfu
@@ -11,11 +12,6 @@
   (corfu-quit-no-match 'separator)
   :config
   (global-corfu-mode))
-
-;; enable corfu popup in terminal Emacs (not needed on Emacs 31+)
-(use-package corfu-terminal
-  :ensure t
-  :hook (corfu-mode . corfu-terminal-mode))
 
 (use-package cape
   :ensure t

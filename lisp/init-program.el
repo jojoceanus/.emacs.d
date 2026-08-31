@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t -*-
 ;;; init-program.el
 
 (defvar my-lsp-reconnect-function nil)

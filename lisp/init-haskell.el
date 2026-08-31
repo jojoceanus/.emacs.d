@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t -*-
 ;;; init-haskell.el
 
 

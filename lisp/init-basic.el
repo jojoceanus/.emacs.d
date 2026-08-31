@@ -1,3 +1,4 @@
+;;; -*- lexical-binding: t -*-
 ;;; scale
 (use-package default-text-scale
   :ensure t
@@ -50,5 +51,14 @@
 (use-package which-key
   :ensure t
   :init (which-key-mode))
+
+;;; terminal emulators
+(use-package ghostel
+  :ensure t
+  :config
+  (setq ghostel-module-auto-install t))
+
+(use-package eat
+  :ensure t)
 
 (provide 'init-basic)
