@@ -5,7 +5,6 @@
 ;;; benchmark (only when started with --debug-init)
 (when init-file-debug
   (use-package benchmark-init
-    :ensure t
     :demand t
     :config
     (benchmark-init/activate)
@@ -38,6 +37,8 @@
 
 ;; persist history across restarts
 (savehist-mode 1)
+(recentf-mode 1)
+(save-place-mode 1)
 
 ;; save window layouts across restarts
 (winner-mode 1)
@@ -51,8 +52,8 @@
 (keymap-global-set "C-x t o" #'tab-bar-switch-to-tab)
 (keymap-global-set "C-x t t" #'tab-bar-switch-to-tab)
 
-;;; disable custom-file
-(setq custom-file (expand-file-name "~/.emacs.d/custom.el.disabled"))
+;;; Custom stores local interactive preferences, not shared configuration.
+(setq custom-file (expand-file-name "custom.el" user-emacs-directory))
 (setq custom-safe-themes t)
 
 (provide 'init-core)

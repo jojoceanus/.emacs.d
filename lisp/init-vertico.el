@@ -2,7 +2,6 @@
 ;;; init-vertico.el
 
 (use-package vertico
-  :ensure t
   :init (vertico-mode)
   :custom
   (vertico-cycle t)
@@ -10,7 +9,6 @@
   (vertico-count 10))
 
 (use-package orderless
-  :ensure t
   :custom
   (completion-styles '(orderless basic))
   (completion-category-defaults nil)
@@ -18,11 +16,9 @@
    '((file (styles basic partial-completion)))))
 
 (use-package marginalia
-  :ensure t
   :init (marginalia-mode))
 
 (use-package consult
-  :ensure t
   :bind
   (("C-s" . consult-line)
    ("C-r" . consult-line)
@@ -37,14 +33,12 @@
   (consult-async-min-input 2))
 
 (use-package embark
-  :ensure t
   :bind (("C-." . embark-act)
-         ("M-." . embark-dwim))
+         ("C-;" . embark-dwim))
   :init
   (setq prefix-help-command #'embark-prefix-help-command))
 
 (use-package embark-consult
-  :ensure t
   :after (embark consult))
 
 (provide 'init-vertico)

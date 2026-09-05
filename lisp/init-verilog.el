@@ -1,10 +1,12 @@
 ;;; -*- lexical-binding: t -*-
 (use-package verilog-mode
-  :ensure t
+  :ensure nil
   :mode ("\\.v\\'" "\\.sv\\'")
+  :hook (verilog-mode . my-verilog-setup)
   :config
-  (setq-local indent-tabs-mode nil)
-  (setq-local tab-width 4)
+  (defun my-verilog-setup ()
+    (setq-local indent-tabs-mode nil)
+    (setq-local tab-width 4))
   (setq verilog-auto-indent-on-newline t)
   (setq verilog-indent-level 4)
   (setq verilog-indent-level-module 0)
@@ -12,8 +14,5 @@
   (setq verilog-indent-level-behavioral 4)
   (setq verilog-indent-level-directive 0)
   (setq verilog-auto-newline nil))
-
-;; register verible LSP (requires verible-verilog-ls in PATH)
-(my-lsp-register-server 'verilog-ts-mode '("verible-verilog-ls"))
 
 (provide 'init-verilog)

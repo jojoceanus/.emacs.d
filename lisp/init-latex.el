@@ -1,7 +1,6 @@
 ;;; init-latex.el --- LaTeX config -*- lexical-binding: t; -*-
 
 (use-package auctex
-  :ensure t
   :defer t
   :init
   (setq TeX-auto-save t)
@@ -32,12 +31,10 @@
 
 ;; fast math input: ` a -> \alpha, ` i -> \int, etc.
 (use-package cdlatex
-  :ensure t
   :hook (LaTeX-mode . cdlatex-mode))
 
 ;; PDF viewer - lazy load on first PDF open
 (use-package pdf-tools
-  :ensure t
   :defer t
   :magic ("%PDF" . pdf-view-mode)
   :config

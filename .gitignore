@@ -5,6 +5,7 @@ eln-cache/
 elpa/
 eshell/
 tree-sitter/
+custom.el
 games/
 .*/
 

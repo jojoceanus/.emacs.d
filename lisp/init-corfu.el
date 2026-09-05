@@ -2,7 +2,6 @@
 ;;; init-corfu.el
 
 (use-package corfu
-  :ensure t
   :custom
   (corfu-auto t)
   (corfu-auto-delay 0.5)
@@ -14,7 +13,6 @@
   (global-corfu-mode))
 
 (use-package cape
-  :ensure t
   :init
   (add-hook 'completion-at-point-functions #'cape-file -10)
   (add-hook 'completion-at-point-functions #'cape-dabbrev -20)
